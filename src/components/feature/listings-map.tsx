@@ -1,6 +1,6 @@
 'use client';
 
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow } from '@react-google-maps/api';
 import { useState } from 'react';
 import type { RentalItem } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
@@ -41,18 +41,33 @@ export function ListingsMap({ items }: ListingsMapProps) {
       mapContainerStyle={containerStyle}
       center={center}
       zoom={14}
+      options={{
+        disableDefaultUI: true,
+        zoomControl: true,
+      }}
     >
       {items.map((item) => (
-        <Marker
+        <MarkerF
           key={item.id}
           position={{ lat: item.lat, lng: item.lng }}
           onClick={() => setSelectedItem(item)}
+          icon={{
+            path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
+            fillColor: 'white',
+            fillOpacity: 0,
+            strokeWeight: 0,
+            scale: 0,
+          }}
+          label={{
+            text: `₹${item.pricePerDay.toLocaleString('en-IN')} - ${item.title}`,
+            className: 'bg-white font-bold text-sm text-primary rounded-full shadow-lg px-3 py-1 border-2 border-primary'
+          }}
         />
       ))}
 
       {selectedItem && (
         <InfoWindow
-          position={{ lat: selectedItem.lat, lng: selectedItem.lng }}
+          position={{ lat: selectedItem.lat + 0.001, lng: selectedItem.lng }}
           onCloseClick={() => setSelectedItem(null)}
         >
           <Card className="border-none shadow-none max-w-xs">
