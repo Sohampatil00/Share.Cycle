@@ -1,6 +1,6 @@
 'use client';
 
-import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow, MarkerClustererF } from '@react-google-maps/api';
 import { useState } from 'react';
 import type { RentalItem } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
@@ -46,28 +46,33 @@ export function ListingsMap({ items }: ListingsMapProps) {
         zoomControl: true,
       }}
     >
-      {items.map((item) => (
-        <MarkerF
-          key={item.id}
-          position={{ lat: item.lat, lng: item.lng }}
-          onClick={() => setSelectedItem(item)}
-          icon={{
-            path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
-            fillColor: 'white',
-            fillOpacity: 0,
-            strokeWeight: 0,
-            scale: 0,
-          }}
-          label={{
-            text: `₹${item.pricePerDay.toLocaleString('en-IN')} - ${item.title}`,
-            className: 'bg-white font-bold text-sm text-primary rounded-full shadow-lg px-3 py-1 border-2 border-primary'
-          }}
-        />
-      ))}
+      <MarkerClustererF>
+        {(clusterer) =>
+          items.map((item) => (
+            <MarkerF
+              key={item.id}
+              position={{ lat: item.lat, lng: item.lng }}
+              onClick={() => setSelectedItem(item)}
+              clusterer={clusterer}
+              label={{
+                text: `₹${item.pricePerDay.toLocaleString('en-IN')}`,
+                className: 'bg-primary font-bold text-sm text-primary-foreground rounded-full shadow-lg px-3 py-1.5 border-2 border-primary-foreground'
+              }}
+              icon={{
+                path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
+                fillColor: 'white',
+                fillOpacity: 0,
+                strokeWeight: 0,
+                scale: 0,
+              }}
+            />
+          ))
+        }
+      </MarkerClustererF>
 
       {selectedItem && (
         <InfoWindow
-          position={{ lat: selectedItem.lat + 0.001, lng: selectedItem.lng }}
+          position={{ lat: selectedItem.lat + 0.0015, lng: selectedItem.lng }}
           onCloseClick={() => setSelectedItem(null)}
         >
           <Card className="border-none shadow-none max-w-xs">
@@ -83,7 +88,6 @@ export function ListingsMap({ items }: ListingsMapProps) {
             </CardHeader>
             <CardContent className="p-2">
                 <h3 className="font-bold text-md mb-1">{selectedItem.title}</h3>
-                <p className="text-sm text-muted-foreground">{selectedItem.description}</p>
             </CardContent>
             <CardFooter className="p-2 flex justify-between items-center">
                 <div className="font-semibold">₹{selectedItem.pricePerDay}/day</div>
