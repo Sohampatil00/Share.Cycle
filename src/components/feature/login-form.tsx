@@ -18,6 +18,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info } from "lucide-react";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
@@ -26,6 +27,7 @@ const formSchema = z.object({
 
 export function LoginForm() {
     const { toast } = useToast();
+    const router = useRouter();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -41,7 +43,7 @@ export function LoginForm() {
             title: "Login Successful",
             description: `Welcome back, ${values.email}!`,
         });
-        // You would likely redirect the user here, e.g., router.push('/dashboard')
+        router.push('/dashboard');
     }
 
   return (
