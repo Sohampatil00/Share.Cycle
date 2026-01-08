@@ -78,6 +78,9 @@ Analytics: Firebase Analytics
     - Near security cameras
 - **Remote Handoff Option:** Smart lock integration for contactless pickup
 
+<img width="1592" height="1775" alt="1  Problem Understanding   Scope - visual selection" src="https://github.com/user-attachments/assets/2e083444-ef02-40d2-b9c4-824c8a7497f7" />
+
+
 ## **User Journey Example:**
 
 ### **Lender (Sarah - Photography Enthusiast):**
