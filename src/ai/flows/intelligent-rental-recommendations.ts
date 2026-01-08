@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import {googleAI} from '@genkit-ai/google-genai';
 
 const IntelligentRentalRecommendationsInputSchema = z.object({
   location: z.string().describe('The location for which to provide rental recommendations.'),
@@ -51,7 +52,10 @@ const prompt = ai.definePrompt({
   Location: {{{location}}}
   User Preferences: {{{userPreferences}}}
 
-  Your response MUST be a valid JSON object.`,
+  Respond with a valid JSON object matching this schema:
+  ${JSON.stringify(IntelligentRentalRecommendationsOutputSchema.shape, null, 2)}
+`,
+  model: googleAI('gemini-pro'),
 });
 
 const intelligentRentalRecommendationsFlow = ai.defineFlow(
