@@ -86,14 +86,6 @@ export function AppSidebar() {
               strokeLinejoin="round"
               strokeWidth="24"
             />
-            <path
-              d="M168,180,146.67,224l-32-72,64,32L224,128,128,32,32,128l58.33,24"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="24"
-            />
           </svg>
           <span className="sr-only">ShareCycle</span>
         </Link>
