@@ -8,6 +8,8 @@ export type RentalItem = {
   category: string;
   imageUrl: string;
   imageHint: string;
+  lat: number;
+  lng: number;
 };
 
 export type NavItem = {

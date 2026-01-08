@@ -12,6 +12,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Electronics',
     imageUrl: findImage('camera')?.imageUrl || '',
     imageHint: findImage('camera')?.imageHint || '',
+    lat: 18.5913,
+    lng: 73.7381,
   },
   {
     id: '2',
@@ -21,6 +23,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Tools',
     imageUrl: findImage('drill')?.imageUrl || '',
     imageHint: findImage('drill')?.imageHint || '',
+    lat: 18.59,
+    lng: 73.74,
   },
   {
     id: '3',
@@ -30,6 +34,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Outdoor',
     imageUrl: findImage('tent')?.imageUrl || '',
     imageHint: findImage('tent')?.imageHint || '',
+    lat: 18.595,
+    lng: 73.745,
   },
   {
     id: '4',
@@ -39,6 +45,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Entertainment',
     imageUrl: findImage('projector')?.imageUrl || '',
     imageHint: findImage('projector')?.imageHint || '',
+    lat: 18.585,
+    lng: 73.735,
   },
   {
     id: '5',
@@ -48,6 +56,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Sports',
     imageUrl: findImage('bike')?.imageUrl || '',
     imageHint: findImage('bike')?.imageHint || '',
+    lat: 18.592,
+    lng: 73.742,
   },
   {
     id: '6',
@@ -57,6 +67,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Entertainment',
     imageUrl: findImage('speaker')?.imageUrl || '',
     imageHint: findImage('speaker')?.imageHint || '',
+    lat: 18.588,
+    lng: 73.738,
   },
   {
     id: '7',
@@ -66,6 +78,8 @@ export const rentalItems: RentalItem[] = [
     category: 'Tech',
     imageUrl: findImage('drone')?.imageUrl || '',
     imageHint: findImage('drone')?.imageHint || '',
+    lat: 18.598,
+    lng: 73.748,
   },
   {
     id: '8',
@@ -75,5 +89,7 @@ export const rentalItems: RentalItem[] = [
     category: 'Apparel',
     imageUrl: findImage('suit')?.imageUrl || '',
     imageHint: findImage('suit')?.imageHint || '',
+    lat: 18.58,
+    lng: 73.73,
   },
 ];
