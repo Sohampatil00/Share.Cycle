@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { rentalItems } from "@/lib/data";
 import { RentalItemCard } from "@/components/feature/rental-item-card";
-import Recommendations from "@/components/feature/recommendations";
 import { ListingsMap } from "@/components/feature/listings-map";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -24,8 +23,6 @@ export default function DashboardPage() {
             </Button>
         </Link>
       </div>
-
-      <Recommendations />
 
       <div className="mt-8">
         <Tabs defaultValue="list" className="w-full">
