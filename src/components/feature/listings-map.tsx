@@ -3,7 +3,7 @@
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow } from '@react-google-maps/api';
 import { useState } from 'react';
 import type { RentalItem } from '@/lib/types';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardContent, CardFooter } from '../ui/card';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 
@@ -18,7 +18,6 @@ const center = {
   lng: 73.7381,
 };
 
-// IMPORTANT: Replace with your Google Maps API key
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
 interface ListingsMapProps {
@@ -40,7 +39,7 @@ export function ListingsMap({ items }: ListingsMapProps) {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={14}
+      zoom={15}
       options={{
         disableDefaultUI: true,
         zoomControl: true,
@@ -52,12 +51,12 @@ export function ListingsMap({ items }: ListingsMapProps) {
           position={{ lat: item.lat, lng: item.lng }}
           onClick={() => setSelectedItem(item)}
           label={{
-            text: `₹${item.pricePerDay.toLocaleString('en-IN')}`,
-            className: 'bg-primary font-bold text-xs text-primary-foreground rounded-full shadow-lg px-2 py-1 border border-primary-foreground'
+            text: `₹${item.pricePerDay.toLocaleString('en-IN')} - ${item.title}`,
+            className: 'bg-primary/80 backdrop-blur-sm font-bold text-xs text-primary-foreground rounded-full shadow-lg px-2 py-1 border-2 border-primary-foreground/50'
           }}
           icon={{
             path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
-            fillColor: 'white',
+            fillColor: 'transparent',
             fillOpacity: 0,
             strokeWeight: 0,
             scale: 0,
@@ -67,20 +66,21 @@ export function ListingsMap({ items }: ListingsMapProps) {
 
       {selectedItem && (
         <InfoWindow
-          position={{ lat: selectedItem.lat + 0.0015, lng: selectedItem.lng }}
+          position={{ lat: selectedItem.lat + 0.0008, lng: selectedItem.lng }}
           onCloseClick={() => setSelectedItem(null)}
+          options={{
+            pixelOffset: new window.google.maps.Size(0, -20)
+          }}
         >
           <Card className="border-none shadow-none max-w-xs">
-            <CardHeader className="p-0 mb-2">
-                <div className="relative aspect-video">
-                    <Image
-                        src={selectedItem.imageUrl}
-                        alt={selectedItem.title}
-                        fill
-                        className="object-cover rounded-t-md"
-                    />
-                </div>
-            </CardHeader>
+              <div className="relative aspect-video">
+                  <Image
+                      src={selectedItem.imageUrl}
+                      alt={selectedItem.title}
+                      fill
+                      className="object-cover rounded-t-md"
+                  />
+              </div>
             <CardContent className="p-2">
                 <h3 className="font-bold text-md mb-1">{selectedItem.title}</h3>
             </CardContent>
