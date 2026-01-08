@@ -19,6 +19,7 @@ import {
   ShieldCheck,
   Leaf,
   Scan,
+  Recycle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/lib/types";
@@ -72,21 +73,7 @@ export function AppSidebar() {
           href="/dashboard"
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
         >
-          <svg
-            className="h-5 w-5 transition-all group-hover:scale-110"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 256"
-          >
-            <rect width="256" height="256" fill="none" />
-            <path
-              d="M168,180,146.67,224l-32-72,64,32L224,128,128,32,32,128l58.33,24Z"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="24"
-            />
-          </svg>
+          <Recycle className="h-5 w-5 transition-all group-hover:scale-110" />
           <span className="sr-only">ShareCycle</span>
         </Link>
         {renderNavItems(navItems)}

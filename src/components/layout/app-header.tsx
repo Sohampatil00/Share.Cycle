@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Search } from "lucide-react";
+import { Menu, Search, Recycle } from "lucide-react";
 import { AppSidebar, navItems } from "./app-sidebar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Link from "next/link";
@@ -31,21 +31,7 @@ export function AppHeader() {
               href="/dashboard"
               className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
             >
-              <svg
-                className="h-6 w-6 transition-all group-hover:scale-110"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-              >
-                <rect width="256" height="256" fill="none" />
-                <path
-                  d="M168,180,146.67,224l-32-72,64,32L224,128,128,32,32,128l58.33,24Z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="24"
-                />
-              </svg>
+              <Recycle className="h-6 w-6 transition-all group-hover:scale-110" />
               <span className="sr-only">ShareCycle</span>
             </Link>
             {navItems.map((item) => (
