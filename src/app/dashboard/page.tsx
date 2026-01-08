@@ -7,6 +7,7 @@ import { ListingsMap } from "@/components/feature/listings-map";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { List, Map, Recycle, Handshake, Sparkles } from "lucide-react";
+import { ReviewsSection } from "@/components/feature/reviews-section";
 
 export default function DashboardPage() {
   return (
@@ -76,6 +77,8 @@ export default function DashboardPage() {
           </TabsContent>
         </Tabs>
       </div>
+
+      <ReviewsSection />
     </div>
   );
 }
