@@ -15,9 +15,7 @@ const IdleAssetSuggestionsInputSchema = z.object({
   browsingHistory: z
     .string()
     .describe(
-      'A string containing the user browsing history on e-commerce sites.
-      Include product names, categories, and any other relevant information.
-      The more detail that is provided, the better the suggestions will be.'
+      'A string containing the user browsing history on e-commerce sites. Include product names, categories, and any other relevant information. The more detail that is provided, the better the suggestions will be.'
     ),
 });
 export type IdleAssetSuggestionsInput = z.infer<typeof IdleAssetSuggestionsInputSchema>;
