@@ -1,6 +1,6 @@
 'use client';
 
-import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api';
 import { useState } from 'react';
 import type { RentalItem } from '@/lib/types';
 import { Card, CardContent, CardFooter } from '../ui/card';
@@ -43,6 +43,8 @@ export function ListingsMap({ items }: ListingsMapProps) {
       options={{
         disableDefaultUI: true,
         zoomControl: true,
+        scrollwheel: false,
+        gestureHandling: "cooperative",
       }}
     >
       {items.map((item) => (
@@ -51,8 +53,8 @@ export function ListingsMap({ items }: ListingsMapProps) {
           position={{ lat: item.lat, lng: item.lng }}
           onClick={() => setSelectedItem(item)}
           label={{
-            text: `₹${item.pricePerDay.toLocaleString('en-IN')} - ${item.title}`,
-            className: 'bg-primary/80 backdrop-blur-sm font-bold text-[10px] text-primary-foreground rounded-full shadow-lg px-2 py-1 border-2 border-primary-foreground/50 cursor-pointer'
+            text: item.title.length > 15 ? `${item.title.substring(0, 15)}...` : item.title,
+            className: 'bg-primary/80 backdrop-blur-sm font-bold text-[10px] text-primary-foreground rounded-full shadow-lg px-2 py-1 border-2 border-primary-foreground/50'
           }}
           icon={{
             path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
@@ -65,8 +67,8 @@ export function ListingsMap({ items }: ListingsMapProps) {
       ))}
 
       {selectedItem && (
-        <InfoWindow
-          position={{ lat: selectedItem.lat + 0.0008, lng: selectedItem.lng }}
+        <InfoWindowF
+          position={{ lat: selectedItem.lat + 0.001, lng: selectedItem.lng }}
           onCloseClick={() => setSelectedItem(null)}
           options={{
             pixelOffset: new window.google.maps.Size(0, -20)
@@ -89,7 +91,7 @@ export function ListingsMap({ items }: ListingsMapProps) {
                 <Button size="sm" onClick={() => alert(`Renting ${selectedItem.title}`)}>Rent</Button>
             </CardFooter>
           </Card>
-        </InfoWindow>
+        </InfoWindowF>
       )}
     </GoogleMap>
   );
