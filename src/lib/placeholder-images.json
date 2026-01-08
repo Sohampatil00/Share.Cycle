@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "camera",
+      "description": "DSLR Camera",
+      "imageUrl": "https://images.unsplash.com/photo-1696713219412-0b08a5afe31c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkc2xyJTIwY2FtZXJhfGVufDB8fHx8MTc2Nzg3NDc0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dslr camera"
+    },
+    {
+      "id": "drill",
+      "description": "Power Drill",
+      "imageUrl": "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3dlciUyMGRyaWxsfGVufDB8fHx8MTc2NzgwMzg2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "power drill"
+    },
+    {
+      "id": "tent",
+      "description": "Camping Tent",
+      "imageUrl": "https://images.unsplash.com/photo-1576176539998-0237d1ac6a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjYW1waW5nJTIwdGVudHxlbnwwfHx8fDE3Njc4NzQ3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "camping tent"
+    },
+    {
+      "id": "projector",
+      "description": "HD Projector",
+      "imageUrl": "https://images.unsplash.com/photo-1589113050289-1c654e7e305d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9qZWN0b3J8ZW58MHx8fHwxNzY3ODc0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "projector"
+    },
+    {
+      "id": "bike",
+      "description": "Mountain Bike",
+      "imageUrl": "https://images.unsplash.com/photo-1606087492572-424ebe0f2f61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb3VudGFpbiUyMGJpa2V8ZW58MHx8fHwxNzY3ODQzMjExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain bike"
+    },
+    {
+      "id": "speaker",
+      "description": "Bluetooth Speaker",
+      "imageUrl": "https://images.unsplash.com/photo-1589003077984-894e133dabab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxibHVldG9vdGglMjBzcGVha2VyfGVufDB8fHx8MTc2Nzg2OTE0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bluetooth speaker"
+    },
+    {
+      "id": "drone",
+      "description": "Quadcopter Drone",
+      "imageUrl": "https://images.unsplash.com/photo-1488263590619-bc1fff43b6c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkcm9uZXxlbnwwfHx8fDE3Njc4NzQ3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "drone"
+    },
+    {
+      "id": "suit",
+      "description": "Formal Suit",
+      "imageUrl": "https://images.unsplash.com/photo-1766113494461-0e5b2a96c66f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmb3JtYWwlMjBzdWl0fGVufDB8fHx8MTc2Nzg1MzAwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "formal suit"
+    },
+    {
+      "id": "user-avatar",
+      "description": "User Avatar",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBmYWNlfGVufDB8fHx8MTc2Nzc4NzgwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person face"
+    },
+    {
+      "id": "map-wakad",
+      "description": "Map of Wakad, Pune",
+      "imageUrl": "https://images.unsplash.com/photo-1581922819941-6ab31ab79afc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2Nzg1NTc0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city map"
+    },
+    {
+      "id": "placeholder-1",
+      "description": "Placeholder Image 1",
+      "imageUrl": "https://images.unsplash.com/photo-1541480601022-2308c0f02487?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvYmplY3R8ZW58MHx8fHwxNzY3ODc0NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "object"
+    },
+    {
+      "id": "placeholder-2",
+      "description": "Placeholder Image 2",
+      "imageUrl": "https://images.unsplash.com/photo-1605722625766-a4c989c747a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0aGluZ3xlbnwwfHx8fDE3Njc4NzQ3NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "thing"
+    }
+  ]
 }
