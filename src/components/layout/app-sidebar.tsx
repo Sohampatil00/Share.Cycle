@@ -13,14 +13,7 @@ import {
   List,
   Handshake,
   MessageSquare,
-  Droplets,
   PlusCircle,
-  Cpu,
-  ShieldCheck,
-  Tag,
-  Sparkles,
-  Leaf,
-  Scan,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/lib/types";
@@ -31,15 +24,6 @@ export const navItems: NavItem[] = [
   { title: "My Rentals", href: "/my-rentals", icon: Handshake, variant: "ghost" },
   { title: "Messages", href: "/messages", icon: MessageSquare, variant: "ghost" },
   { title: "List an Item", href: "/list-item", icon: PlusCircle, variant: "ghost" },
-];
-
-export const aiTools: NavItem[] = [
-  { title: "Intelligent Matchmaking", href: "/dashboard", icon: Sparkles, variant: "ghost", label:"AI"},
-  { title: "Dynamic Pricing", href: "/pricing-tool", icon: Tag, variant: "ghost", label:"AI" },
-  { title: "Risk Assessment", href: "/risk-assessment", icon: ShieldCheck, variant: "ghost", label:"AI" },
-  { title: "Idle Asset Detector", href: "/idle-asset-detector", icon: Cpu, variant: "ghost", label:"AI" },
-  { title: "Damage Detection", href: "/damage-detection", icon: Scan, variant: "ghost", label:"AI" },
-  { title: "Sustainability", href: "/sustainability", icon: Leaf, variant: "ghost" },
 ];
 
 export function AppSidebar() {
@@ -80,9 +64,6 @@ export function AppSidebar() {
           <span className="sr-only">ShareCycle</span>
         </Link>
         {renderNavItems(navItems)}
-      </nav>
-      <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
-        {renderNavItems(aiTools)}
       </nav>
     </aside>
   );
