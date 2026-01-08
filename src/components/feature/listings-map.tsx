@@ -52,7 +52,7 @@ export function ListingsMap({ items }: ListingsMapProps) {
           onClick={() => setSelectedItem(item)}
           label={{
             text: `₹${item.pricePerDay.toLocaleString('en-IN')} - ${item.title}`,
-            className: 'bg-primary/80 backdrop-blur-sm font-bold text-xs text-primary-foreground rounded-full shadow-lg px-2 py-1 border-2 border-primary-foreground/50'
+            className: 'bg-primary/80 backdrop-blur-sm font-bold text-[10px] text-primary-foreground rounded-full shadow-lg px-2 py-1 border-2 border-primary-foreground/50 cursor-pointer'
           }}
           icon={{
             path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
@@ -86,7 +86,7 @@ export function ListingsMap({ items }: ListingsMapProps) {
             </CardContent>
             <CardFooter className="p-2 flex justify-between items-center">
                 <div className="font-semibold">₹{selectedItem.pricePerDay}/day</div>
-                <Button size="sm">Rent</Button>
+                <Button size="sm" onClick={() => alert(`Renting ${selectedItem.title}`)}>Rent</Button>
             </CardFooter>
           </Card>
         </InfoWindow>
