@@ -1,6 +1,6 @@
 'use client';
 
-import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow, MarkerClustererF } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow } from '@react-google-maps/api';
 import { useState } from 'react';
 import type { RentalItem } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
@@ -46,29 +46,24 @@ export function ListingsMap({ items }: ListingsMapProps) {
         zoomControl: true,
       }}
     >
-      <MarkerClustererF>
-        {(clusterer) =>
-          items.map((item) => (
-            <MarkerF
-              key={item.id}
-              position={{ lat: item.lat, lng: item.lng }}
-              onClick={() => setSelectedItem(item)}
-              clusterer={clusterer}
-              label={{
-                text: `₹${item.pricePerDay.toLocaleString('en-IN')}`,
-                className: 'bg-primary font-bold text-sm text-primary-foreground rounded-full shadow-lg px-3 py-1.5 border-2 border-primary-foreground'
-              }}
-              icon={{
-                path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
-                fillColor: 'white',
-                fillOpacity: 0,
-                strokeWeight: 0,
-                scale: 0,
-              }}
-            />
-          ))
-        }
-      </MarkerClustererF>
+      {items.map((item) => (
+        <MarkerF
+          key={item.id}
+          position={{ lat: item.lat, lng: item.lng }}
+          onClick={() => setSelectedItem(item)}
+          label={{
+            text: `₹${item.pricePerDay.toLocaleString('en-IN')}`,
+            className: 'bg-primary font-bold text-xs text-primary-foreground rounded-full shadow-lg px-2 py-1 border border-primary-foreground'
+          }}
+          icon={{
+            path: 'M-10,0a10,10 0 1,0 20,0a10,10 0 1,0 -20,0',
+            fillColor: 'white',
+            fillOpacity: 0,
+            strokeWeight: 0,
+            scale: 0,
+          }}
+        />
+      ))}
 
       {selectedItem && (
         <InfoWindow

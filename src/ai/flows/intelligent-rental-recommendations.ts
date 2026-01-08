@@ -50,9 +50,8 @@ User Preferences: {{{userPreferences}}}
 
 Consider seasonal trends, local events, and weather patterns to generate the recommendations.
 
-Format your response as a JSON object with the following keys:
-- recommendations: An array of rental item recommendations.
-- reasoning: The reasoning behind the recommendations, including factors like seasonal trends, local events, and weather patterns.`,
+Your response MUST be a JSON object with "recommendations" (an array of strings) and "reasoning" (a string) keys.
+`,
 });
 
 const intelligentRentalRecommendationsFlow = ai.defineFlow(
