@@ -33,6 +33,7 @@ const riskAssessmentForRentalsPrompt = ai.definePrompt({
   name: 'riskAssessmentForRentalsPrompt',
   input: {schema: RiskAssessmentForRentalsInputSchema},
   output: {schema: RiskAssessmentForRentalsOutputSchema},
+  model: 'googleai/gemini-1.5-flash-latest',
   prompt: `You are an AI assistant that assesses the risk associated with a user based on their behavior, communication sentiment, and transaction history.
 
 Analyze the following information to determine a risk score (0-100), risk level (low, medium, or high), and provide an explanation for the assessment.
