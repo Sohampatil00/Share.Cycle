@@ -31,7 +31,29 @@ export function AppHeader() {
               href="/dashboard"
               className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 transition-all group-hover:scale-110"><path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10z"/><path d="M12 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+              <svg
+                className="h-6 w-6 transition-all group-hover:scale-110"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 256"
+              >
+                <rect width="256" height="256" fill="none" />
+                <path
+                  d="M168,180,146.67,224l-32-72,64,32L224,128,128,32,32,128l58.33,24Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="24"
+                />
+                <path
+                  d="M168,180,146.67,224l-32-72,64,32L224,128,128,32,32,128l58.33,24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="24"
+                />
+              </svg>
               <span className="sr-only">ShareCycle</span>
             </Link>
             {navItems.map((item) => (
