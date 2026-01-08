@@ -14,16 +14,28 @@ import {
   Handshake,
   MessageSquare,
   PlusCircle,
+  Cpu,
+  Tag,
+  ShieldCheck,
+  Leaf,
+  Scan,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/lib/types";
+import { Separator } from "../ui/separator";
 
 export const navItems: NavItem[] = [
   { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard, variant: "ghost" },
   { title: "My Listings", href: "/my-listings", icon: List, variant: "ghost" },
   { title: "My Rentals", href: "/my-rentals", icon: Handshake, variant: "ghost" },
   { title: "Messages", href: "/messages", icon: MessageSquare, variant: "ghost" },
-  { title: "List an Item", href: "/list-item", icon: PlusCircle, variant: "ghost" },
+];
+
+export const aiTools: NavItem[] = [
+    { title: "AI Idle Asset Detector", href: "/idle-asset-detector", icon: Cpu, variant: "ghost" },
+    { title: "AI Dynamic Pricing", href: "/pricing-tool", icon: Tag, variant: "ghost" },
+    { title: "AI Risk Assessment", href: "/risk-assessment", icon: ShieldCheck, variant: "ghost" },
+    { title: "Sustainability", href: "/sustainability", icon: Leaf, variant: "ghost" },
 ];
 
 export function AppSidebar() {
@@ -64,6 +76,29 @@ export function AppSidebar() {
           <span className="sr-only">ShareCycle</span>
         </Link>
         {renderNavItems(navItems)}
+        <Separator className="my-2" />
+        {renderNavItems(aiTools)}
+      </nav>
+      <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
+        <TooltipProvider>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <Link
+                        href="/list-item"
+                        className={cn(
+                        "flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8",
+                        pathname === "/list-item"
+                            ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                            : "bg-primary text-primary-foreground hover:bg-primary/90"
+                        )}
+                    >
+                        <PlusCircle className="h-5 w-5" />
+                        <span className="sr-only">List an Item</span>
+                    </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">List an Item</TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
       </nav>
     </aside>
   );
