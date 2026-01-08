@@ -43,14 +43,26 @@ const prompt = ai.definePrompt({
   name: 'intelligentRentalRecommendationsPrompt',
   input: {schema: IntelligentRentalRecommendationsInputSchema},
   output: {schema: IntelligentRentalRecommendationsOutputSchema},
-  prompt: `You are an expert rental recommendation system. Given the location and user preferences, you will provide personalized rental recommendations.
+  prompt: `You are an expert rental recommendation system. Your task is to provide personalized rental recommendations based on the provided location and user preferences.
 
 Location: {{{location}}}
 User Preferences: {{{userPreferences}}}
 
-Consider seasonal trends, local events, and weather patterns to generate the recommendations.
+Analyze the given information and consider the following factors:
+- Seasonal trends (e.g., winter sports gear in cold climates during winter).
+- Local events (e.g., camera rentals during a film festival).
+- Weather patterns (e.g., umbrellas or raincoats during a rainy season).
+- The user's stated preferences.
 
-Your response MUST be a JSON object with "recommendations" (an array of strings) and "reasoning" (a string) keys.
+Based on your analysis, generate a list of 3-5 specific item recommendations. Also, provide a brief reasoning for your suggestions.
+
+Your response MUST be a valid JSON object that adheres to the following schema:
+{
+  "recommendations": [
+    "string"
+  ],
+  "reasoning": "string"
+}
 `,
 });
 
