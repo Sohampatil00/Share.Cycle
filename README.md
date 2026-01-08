@@ -14,6 +14,8 @@ A platform where individuals can monetize their underutilized possessions by ren
 - **Suburban Families:** Have garages full of seasonal/specialized items
 - **Retirees:** Have accumulated quality tools/equipment with limited current use
 
+<img width="1464" height="733" alt="image" src="https://github.com/user-attachments/assets/3aa6d3a5-b9ae-49e8-8914-62a8295e16fb" />
+
 ## **Google-Powered Solution Architecture**
 
 ### **Tech Stack:**
