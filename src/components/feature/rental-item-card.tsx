@@ -68,7 +68,10 @@ export function RentalItemCard({ item }: RentalItemCardProps) {
                     />
                 }
             </div>
-            <p className="text-sm text-center font-medium text-foreground">Suggested: <span className="text-primary">Library Cafe, Datta Mandir Road, Wakad</span></p>
+            <div className="text-sm text-center font-medium text-foreground">
+              <p>Suggested: <span className="text-primary">Library Cafe, Datta Mandir Road, Wakad</span></p>
+              <p className="text-xs text-muted-foreground">({item.lat}, {item.lng})</p>
+            </div>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
               <AlertDialogAction>Agree & Proceed</AlertDialogAction>
