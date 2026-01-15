@@ -25,15 +25,24 @@ interface ListingsMapProps {
 }
 
 export function ListingsMap({ items }: ListingsMapProps) {
-  const { isLoaded } = useJsApiLoader({
+  const { isLoaded, loadError } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: API_KEY
   });
 
   const [selectedItem, setSelectedItem] = useState<RentalItem | null>(null);
 
-  if (!isLoaded) return <div>Loading map...</div>;
-  if (!API_KEY) return <div className="text-red-500 font-bold text-center p-8 bg-red-50 border border-red-200 rounded-lg">Google Maps API Key is missing. Please add it to your environment variables.</div>
+  if (loadError) {
+      return (
+          <div className="text-red-500 font-bold text-center p-8 bg-red-50 border border-red-200 rounded-lg">
+              <p>Google Maps could not load.</p>
+              <p className="font-normal text-sm mt-2">This is often caused by a missing API key or a project without billing enabled.</p>
+              <p className="font-normal text-xs mt-1">Please check the developer console for more details.</p>
+          </div>
+      );
+  }
+
+  if (!isLoaded) return <div className="flex items-center justify-center h-full"><p>Loading map...</p></div>;
 
   return (
     <GoogleMap
