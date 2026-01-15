@@ -44,7 +44,7 @@ const prompt = ai.definePrompt({
   Provide a list of suggested items that the user could rent out.
 
   Browsing History:
-  {{browsingHistory}}
+  {{{browsingHistory}}}
 
   Suggestions:
   `,
