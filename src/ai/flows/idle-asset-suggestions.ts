@@ -37,6 +37,7 @@ const prompt = ai.definePrompt({
   name: 'idleAssetSuggestionsPrompt',
   input: {schema: IdleAssetSuggestionsInputSchema},
   output: {schema: IdleAssetSuggestionsOutputSchema},
+  model: 'googleai/gemini-1.5-flash-latest',
   prompt: `You are an AI assistant designed to suggest items that a user could rent out, based on their e-commerce browsing history and local demand.
 
   Analyze the user's browsing history to identify potential items for rental.
