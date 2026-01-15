@@ -14,6 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
+import { Label } from '@/components/ui/label';
 
 const formSchema = z.object({
   userBehavior: z.string().min(1, 'This field is required.'),
