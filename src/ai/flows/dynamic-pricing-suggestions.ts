@@ -38,7 +38,7 @@ const dynamicPricingPrompt = ai.definePrompt({
   name: 'dynamicPricingPrompt',
   input: {schema: DynamicPricingInputSchema},
   output: {schema: DynamicPricingOutputSchema},
-  prompt: `You are an expert pricing analyst specializing in rental markets. Your goal is to provide the optimal rental price per day for an item based on various factors.
+  prompt: `You are an expert pricing analyst specializing in rental markets. Your goal is to provide the optimal rental price per day for an item based on various factors. Your primary objective is to suggest a price that makes the item highly likely to be rented.
 
   Here's the information you have:
 
