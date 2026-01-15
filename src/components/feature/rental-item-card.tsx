@@ -19,9 +19,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 type RentalItemCardProps = {
   item: RentalItem;
+  showRentButton?: boolean;
 };
 
-export function RentalItemCard({ item }: RentalItemCardProps) {
+export function RentalItemCard({ item, showRentButton = true }: RentalItemCardProps) {
     const mapImage = PlaceHolderImages.find(img => img.id === 'map-wakad');
 
   return (
@@ -45,39 +46,41 @@ export function RentalItemCard({ item }: RentalItemCardProps) {
         <div className="font-semibold text-lg">
           <span className="font-sans">₹</span>{item.pricePerDay.toLocaleString('en-IN')}<span className="text-sm font-normal text-muted-foreground">/day</span>
         </div>
-        <AlertDialog>
-          <AlertDialogTrigger asChild>
-            <Button>Rent Now</Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Confirm Rental & Meetup</AlertDialogTitle>
-              <AlertDialogDescription>
-                You are about to rent '{item.title}'. Please coordinate a safe meetup with the owner. We suggest the following safe spot in Wakad, Pune.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <div className="rounded-lg overflow-hidden border">
-                {mapImage && 
-                    <Image 
-                        src={mapImage.imageUrl}
-                        alt="Suggested meetup location"
-                        width={800}
-                        height={600}
-                        className="w-full"
-                        data-ai-hint={mapImage.imageHint}
-                    />
-                }
-            </div>
-            <div className="text-sm text-center font-medium text-foreground">
-              <p>Suggested: <span className="text-primary">Library Cafe, Datta Mandir Road, Wakad</span></p>
-              <p className="text-xs text-muted-foreground">({item.lat}, {item.lng})</p>
-            </div>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction>Agree & Proceed</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+        {showRentButton && (
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button>Rent Now</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Confirm Rental & Meetup</AlertDialogTitle>
+                <AlertDialogDescription>
+                  You are about to rent '{item.title}'. Please coordinate a safe meetup with the owner. We suggest the following safe spot in Wakad, Pune.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <div className="rounded-lg overflow-hidden border">
+                  {mapImage && 
+                      <Image 
+                          src={mapImage.imageUrl}
+                          alt="Suggested meetup location"
+                          width={800}
+                          height={600}
+                          className="w-full"
+                          data-ai-hint={mapImage.imageHint}
+                      />
+                  }
+              </div>
+              <div className="text-sm text-center font-medium text-foreground">
+                <p>Suggested: <span className="text-primary">Library Cafe, Datta Mandir Road, Wakad</span></p>
+                <p className="text-xs text-muted-foreground">({item.lat}, {item.lng})</p>
+              </div>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction>Agree & Proceed</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        )}
       </CardFooter>
     </Card>
   );
