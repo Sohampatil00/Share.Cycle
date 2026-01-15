@@ -14,6 +14,8 @@ export const rentalItems: RentalItem[] = [
     imageHint: findImage('camera')?.imageHint || '',
     lat: 18.5913,
     lng: 73.7381,
+    rentalDays: 7,
+    daysRented: 2,
   },
   {
     id: '2',
@@ -36,6 +38,8 @@ export const rentalItems: RentalItem[] = [
     imageHint: findImage('tent')?.imageHint || '',
     lat: 18.595,
     lng: 73.745,
+    rentalDays: 3,
+    daysRented: 1,
   },
   {
     id: '4',
@@ -47,6 +51,8 @@ export const rentalItems: RentalItem[] = [
     imageHint: findImage('projector')?.imageHint || '',
     lat: 18.585,
     lng: 73.735,
+    rentalDays: 5,
+    daysRented: 4,
   },
   {
     id: '5',

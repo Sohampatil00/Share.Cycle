@@ -10,6 +10,8 @@ export type RentalItem = {
   imageHint: string;
   lat: number;
   lng: number;
+  rentalDays?: number;
+  daysRented?: number;
 };
 
 export type NavItem = {

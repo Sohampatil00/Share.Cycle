@@ -16,6 +16,7 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Progress } from '@/components/ui/progress';
 
 type RentalItemCardProps = {
   item: RentalItem;
@@ -24,6 +25,8 @@ type RentalItemCardProps = {
 
 export function RentalItemCard({ item, showRentButton = true }: RentalItemCardProps) {
     const mapImage = PlaceHolderImages.find(img => img.id === 'map-wakad');
+    const hasRentalProgress = !showRentButton && item.daysRented !== undefined && item.rentalDays !== undefined;
+    const progressPercentage = hasRentalProgress ? (item.daysRented / item.rentalDays) * 100 : 0;
 
   return (
     <Card className="overflow-hidden flex flex-col h-full transition-all hover:shadow-lg hover:-translate-y-1">
@@ -41,6 +44,12 @@ export function RentalItemCard({ item, showRentButton = true }: RentalItemCardPr
       <CardContent className="p-4 flex-grow">
         <h3 className="text-lg font-headline font-semibold leading-tight">{item.title}</h3>
         <p className="text-sm text-muted-foreground mt-1">{item.category}</p>
+        {hasRentalProgress && (
+            <div className="mt-2 space-y-1">
+                <Progress value={progressPercentage} className="h-2" />
+                <p className="text-xs text-muted-foreground">{item.daysRented} of {item.rentalDays} days</p>
+            </div>
+        )}
       </CardContent>
       <CardFooter className="p-4 flex justify-between items-center">
         <div className="font-semibold text-lg">
