@@ -20,6 +20,7 @@ import {
   Leaf,
   Scan,
   Recycle,
+  LifeBuoy,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/lib/types";
@@ -37,6 +38,7 @@ export const aiTools: NavItem[] = [
     { title: "AI Dynamic Pricing", href: "/pricing-tool", icon: Tag, variant: "ghost" },
     { title: "AI Risk Assessment", href: "/risk-assessment", icon: ShieldCheck, variant: "ghost" },
     { title: "Sustainability", href: "/sustainability", icon: Leaf, variant: "ghost" },
+    { title: "Support", href: "/support", icon: LifeBuoy, variant: "ghost" },
 ];
 
 export function AppSidebar() {
